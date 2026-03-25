@@ -7,7 +7,7 @@ title: SQL on HPC
 
 This guide walks you through running SQL queries on a large dataset using TACC's HPC systems. The dataset is too big for most laptops — that's the point.
 
-**Dataset:** NYC Yellow Taxi trips (2023) — ~20 million trips, ~6 GB database
+**Dataset:** NYC Yellow Taxi trips (2023) — ~20 million trips, ~9 GB total on disk
 
 **For instructors:** This is a template. Adapt the queries to fit your course. The dataset and setup are ready to go.
 
@@ -35,12 +35,12 @@ ssh your_username@vista.tacc.utexas.edu
 
 ```bash
 cd $WORK
-git clone https://github.com/ashleyscruse/sql-on-tacc.git
-cd sql-on-tacc
+git clone https://github.com/ashleyscruse/sql-on-hpc.git
+cd sql-on-hpc
 bash scripts/setup_data.sh
 ```
 
-This downloads 12 months of NYC taxi data and loads it into a SQLite database. Takes about 10-15 minutes and uses ~9 GB of disk.
+This downloads 12 months of NYC taxi data (~3 GB), loads it into a SQLite database (~6 GB), and creates indexes. About ~9 GB total disk. Takes 10-15 minutes.
 
 > **Instructor tip:** Run this before class so students don't wait. You can clone once to a shared directory, or have each student run it on their own `$WORK`.
 
@@ -263,7 +263,7 @@ ORDER BY hour_of_day;
 
 ## Why HPC?
 
-This database has ~20 million rows and takes up ~6 GB on disk. Here's why you'd want HPC for this:
+This database has ~20 million rows and takes up ~9 GB on disk. Here's why you'd want HPC for this:
 
 | | Your Laptop | TACC Compute Node |
 |---|---|---|
@@ -272,7 +272,7 @@ This database has ~20 million rows and takes up ~6 GB on disk. Here's why you'd 
 | Full table scan on 20M rows | Slow, might swap to disk | Fast, fits in memory |
 | Multiple queries at once | Bogs down | Plenty of headroom |
 
-A query that scans all 20 million rows needs to read ~6 GB. If your laptop has 8 GB of RAM and the OS is using 4 GB, there's not much room. On TACC, 6 GB is a rounding error.
+A query that scans all 20 million rows needs to load the database into memory. At ~9 GB, a laptop with 8 GB of RAM can't hold it without swapping to disk. On TACC with 223 GB of RAM, 9 GB is a rounding error.
 
 > **For instructors:** The real teaching moment is when a student runs a query on their laptop and it takes 30 seconds, then runs the same query on TACC and it takes 2 seconds. That's the "aha."
 

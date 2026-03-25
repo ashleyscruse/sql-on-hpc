@@ -4,12 +4,12 @@ A template for running SQL queries on large datasets using TACC's HPC systems. D
 
 ## Guide
 
-**[Read the guide](https://ashleyscruse.github.io/sql-on-tacc/)**
+**[Read the guide](https://ashleyscruse.github.io/sql-on-hpc/)**
 
 ## What's Inside
 
 - Step-by-step guide for running SQLite on TACC
-- Setup script that downloads and loads the NYC Taxi dataset (~20 million trips)
+- Setup script that downloads and loads the NYC Taxi dataset (~20 million trips, ~9 GB)
 - Example queries from basic to advanced
 - Ready for any professor to adapt for their course
 
@@ -17,8 +17,8 @@ A template for running SQL queries on large datasets using TACC's HPC systems. D
 
 ```bash
 cd $WORK
-git clone https://github.com/ashleyscruse/sql-on-tacc.git
-cd sql-on-tacc
+git clone https://github.com/ashleyscruse/sql-on-hpc.git
+cd sql-on-hpc
 bash scripts/setup_data.sh
 ```
 
