@@ -15,7 +15,7 @@ This guide walks you through running SQL queries on a large dataset using HPC. T
 
 ## Prerequisites
 
-- An HPC account with MFA set up ([MSF Getting Started guide](https://ashleyscruse.github.io/msf-getting-started/))
+- An HPC account with MFA set up ([MSCF Getting Started guide](https://morehouse-supercomputing.github.io/mscf-getting-started/))
 - Access to an HPC system (e.g., Vista, Lonestar6, Stampede3)
 - An active allocation
 
@@ -27,7 +27,7 @@ This guide walks you through running SQL queries on a large dataset using HPC. T
 ssh your_username@vista.tacc.utexas.edu
 ```
 
-> Replace `vista` with your system. See the [Jupyter on HPC guide](https://ashleyscruse.github.io/jupyter-on-hpc/) if you need help with SSH.
+> Replace `vista` with your system. See the [Jupyter on HPC guide](https://morehouse-supercomputing.github.io/jupyter-on-hpc/) if you need help with SSH.
 
 ---
 
@@ -35,7 +35,7 @@ ssh your_username@vista.tacc.utexas.edu
 
 ```bash
 cd $WORK
-git clone https://github.com/ashleyscruse/sql-on-hpc.git
+git clone https://github.com/morehouse-supercomputing/sql-on-hpc.git
 cd sql-on-hpc
 bash scripts/setup_data.sh
 ```
@@ -64,7 +64,7 @@ You should see ~20 million rows.
 
 ### From a Jupyter notebook
 
-If you're using Jupyter on HPC (see the [Jupyter guide](https://ashleyscruse.github.io/jupyter-on-hpc/)):
+If you're using Jupyter on HPC (see the [Jupyter guide](https://morehouse-supercomputing.github.io/jupyter-on-hpc/)):
 
 ```python
 import sqlite3

@@ -4,7 +4,7 @@ A template for running SQL queries on large datasets using HPC systems. Designed
 
 ## Guide
 
-**[Read the guide](https://ashleyscruse.github.io/sql-on-hpc/)**
+**[Read the guide](https://morehouse-supercomputing.github.io/sql-on-hpc/)**
 
 ## What's Inside
 
@@ -17,7 +17,7 @@ A template for running SQL queries on large datasets using HPC systems. Designed
 
 ```bash
 cd $WORK
-git clone https://github.com/ashleyscruse/sql-on-hpc.git
+git clone https://github.com/morehouse-supercomputing/sql-on-hpc.git
 cd sql-on-hpc
 bash scripts/setup_data.sh
 ```
