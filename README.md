@@ -9,7 +9,7 @@ A template for running SQL queries on large datasets using HPC systems. Designed
 ## What's Inside
 
 - Step-by-step guide for running SQLite on HPC
-- Setup script that downloads and loads the NYC Taxi dataset (~20 million trips, ~9 GB)
+- Setup script that downloads and loads the NYC Taxi dataset (~38 million trips, ~9 GB)
 - Example queries from basic to advanced
 - Ready for any professor to adapt for their course
 
